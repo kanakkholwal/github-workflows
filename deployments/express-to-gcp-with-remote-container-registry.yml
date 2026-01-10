@@ -1,9 +1,9 @@
 name: Deployments of Microservices
 
 env:
-  SERVICE_NAME_SERVER: "muse-server"
+  SERVICE_NAME_SERVER: "app-server"
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/muse-server
+  IMAGE_NAME: ${{ github.repository }}/app-server
   REMOTE_REPO_NAME: "ghcr-remote"
 
 
@@ -160,7 +160,7 @@ jobs:
             TAG="${{ github.ref_name }}"
           fi
           
-          GHCR_IMAGE="ghcr.io/${{ github.repository }}/muse-server:${TAG}"
+          GHCR_IMAGE="ghcr.io/${{ github.repository }}/app-server:${TAG}"
           AR_IMAGE="${{ vars.GCP_REPO_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.REMOTE_REPO_NAME }}/${GHCR_IMAGE}"
           
           echo "Deploying: ${AR_IMAGE}"
