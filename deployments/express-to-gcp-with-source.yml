@@ -1,18 +1,17 @@
-name: 🚀 Deployments of Microservices
+name:  Deployments of Microservices
 
 env:
-  SERVICE_NAME_SERVER: "college-ecosystem-server"
+  SERVICE_NAME_SERVER: "app-server"
 
-# on: workflow_dispatch
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches:
-  #     - main
-  #     - staging
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - staging
       
   workflow_dispatch:
 
